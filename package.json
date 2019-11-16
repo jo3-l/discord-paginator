@@ -1,0 +1,23 @@
+{
+	"name": "djs-pagination",
+	"version": "1.0.0",
+	"description": "Utility to paginate Discord embeds with Discord.js.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Jo3-L/djs-pagination.git"
+	},
+	"keywords": [
+		"discord.js",
+		"pagination"
+	],
+	"author": "Jo3-L",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Jo3-L/djs-pagination/issues"
+	},
+	"homepage": "https://github.com/Jo3-L/djs-pagination#readme"
+}
