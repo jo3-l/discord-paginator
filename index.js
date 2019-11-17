@@ -25,6 +25,10 @@ class Paginator {
 		return this.pages[0];
 	}
 
+	set endPage(page) {
+		return this.endPage = page;
+	}
+
 	setTransform(fn) {
 		const _pages = [];
 		let i = 0;
