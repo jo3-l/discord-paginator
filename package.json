@@ -1,6 +1,6 @@
 {
 	"name": "djs-pagination",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Utility to paginate Discord embeds with Discord.js.",
 	"main": "index.js",
 	"scripts": {
