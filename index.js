@@ -20,15 +20,6 @@ class Paginator {
 		return this;
 	}
 
-
-	get endPage() {
-		return this.pages[0];
-	}
-
-	set endPage(page) {
-		return this.endPage = page;
-	}
-
 	setTransform(fn) {
 		const _pages = [];
 		let i = 0;
@@ -72,7 +63,7 @@ class Paginator {
 		});
 
 		collector.on('end', () => {
-			message.edit(this.endPage);
+			if (this.endPage) message.edit(this.endPage);
 			message.reactions.removeAll();
 		});
 	}
