@@ -59,7 +59,7 @@ class Paginator {
 				this.page = this.pages.length - 1;
 				break;
 			}
-			message.reactions.get(reaction.emoji.name).users.remove(user.id);
+			reaction.users.remove(user.id);
 		});
 
 		collector.on('end', () => {
