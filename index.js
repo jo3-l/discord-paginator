@@ -1,7 +1,8 @@
 const EMOJIS = { first: '⏪', prev: '◀️', stop: '⏹️', next: '▶️', last: '⏩' };
 
 class Paginator {
-	constructor(pages = [], { filter, timeout } = { timeout: 5 * 6e4 }) {
+	constructor(client, pages = [], { filter, timeout } = { timeout: 5 * 6e4 }) {
+		this.client = client;
 		this.pages = Array.isArray(pages) ? pages : [];
 		this.filter = typeof filter === 'function'
 			? (reaction, user) => filter(reaction, user) && !user.bot && Object.values(EMOJIS).includes(reaction.emoji.name)
@@ -34,6 +35,9 @@ class Paginator {
 
 	async start(channel) {
 		if (!this.pages.length) return;
+		if(typeof channel === "string") channel = await this.client.channels.fetch(channel).catch(() => undefined);
+		if(!channel) return;
+		
 		const message = await channel.send(this.pages[0]);
 		for (const emoji of Object.values(EMOJIS)) await message.react(emoji);
 		const collector = message.createReactionCollector(this.filter, { time: this.timeout });
